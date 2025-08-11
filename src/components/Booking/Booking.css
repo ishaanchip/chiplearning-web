@@ -1,0 +1,182 @@
+.booking-shell{
+    width:100vw;
+    height:100vh;
+    overflow-y: scroll;
+    background-color: rgb(250, 250, 250);
+}
+
+.booking-area{
+    display: flex;
+    margin: 0 auto;
+    margin-top: 4%;
+    width:95%;
+    height:635px;
+    
+}
+
+.filter-area{
+    width:30%;
+    height:100%;
+    overflow-y: scroll;
+}
+
+.mini-filter-area{
+    width:80%;
+    height:300px;
+}
+
+.mini-filter-button{
+    display: none;
+}
+
+.tutor-catalog-area{
+    width:75%;
+    height:100%;
+}
+
+.catalog-header{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width:90%;
+    margin-bottom:2.5% ;
+    align-items: center;
+}
+
+.catalog-mutaters{
+    margin-left: -5%;
+}
+
+
+.filter-selections{
+    display: flex;
+    flex-wrap: wrap;
+    width:90%;
+    height:20%;
+    overflow-y: scroll;
+    margin-left: -1%;
+}
+
+.filter-selections div{
+    margin: 1%;
+}
+
+.filter-selections p{
+    min-width:150px;
+    height:35px;
+    padding:2%;
+    font-size: 13px;
+    border: 2px solid gray;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.tutors{
+    display: flex;
+    flex-wrap: wrap;
+    height:80%;
+    overflow-y: scroll;
+}
+
+.tutor{
+    min-width: 250px;
+    width:250px;
+    height:95%;
+    overflow-y: scroll;
+    background-color: rgba(241, 227, 209, 0.6);
+    border-radius: 15px;
+    padding:1%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    margin-left:0%;
+}
+
+.tutor p{
+    margin: 1%;
+}
+
+.tutor-display-info{
+    display: flex;
+    flex-direction: column;
+    width:90%;
+    margin: 0 auto;
+}
+
+.tutor-display-info img{
+    margin: 0 auto;
+    width: 300px;
+    height: 200px;
+    object-fit:contain;
+}
+
+.tutor-display-info .email-tag{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tutor-display-info button{
+    margin: 0 auto;
+    width:50%;
+}
+
+
+
+.tutor-essential-info{
+    width:90%;
+    margin-top: 2.5%;
+}
+
+.tutor-essential-info .tutor-offerings{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+
+@media  only screen and (max-width:1200px){
+
+    button{
+        font-size: 0.85rem;
+      }
+      
+      p {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.6;
+      }
+
+
+}
+
+
+@media  only screen and (max-width:800px){
+
+    .tutor-catalog-area{
+        margin-left: 5%;
+        width:90%;
+        height:100%;
+
+    }
+    .tutors{
+        height:95%;
+        overflow-y: visible;
+    }
+    .tutor{
+        width:90%;
+        height:60%;
+    }
+
+    .filter-area{
+        display: none;
+    }
+    .mini-filter-button{
+        display: inline;
+    }
+
+
+    
+
+      
+}

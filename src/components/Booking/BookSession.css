@@ -1,0 +1,168 @@
+/* .book-session-area{
+    display: flex;
+    overflow-y: scroll;
+    width:100%;
+}
+
+
+
+.booking-process{
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.booking-process .booking-button{
+    border:2px solid black;
+    background-color: white;
+    color: black;
+}
+
+.booking-process .active-button{
+    background-color: rgb(16, 185, 16);
+    color:white;
+}
+
+.booked{
+    color: red;
+}
+.course-list button{
+    margin-right: 2%;
+}
+
+.date-selection{
+    border: 2px solid black;
+    display: flex;
+}
+
+.tutor-marketing{
+    width:0%;
+}
+
+
+.tutor-image-area{
+    width:350px;
+    height:350px;
+    border: 2px solid black;
+} */
+
+
+
+.book-session-area {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    background-color: #f9fafb; /* light neutral background */
+    border-radius: 8px;
+  }
+  
+  .booking-process {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .booking-note{
+    margin: 0 auto;
+    width:80%;
+    background-color: rgba(241, 227, 209, 0.6);
+    padding: 1%;
+    margin-bottom: 2.5%;
+    border-radius: 5px;
+  }
+  
+  .dialog-header{
+    background-color: #f9fafb;
+  }
+  .booking-process h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .booking-process .booking-button {
+    border: 1px solid #ccc;
+    background-color: white;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+  
+  .booking-process .booking-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .booking-process .active-button {
+    background-color: #10b910;
+    color: white;
+    border-color: #0a770a;
+  }
+  
+  .booked {
+    color: red;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  
+  .course-list,
+  .location-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .date-selection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-height: 300px;
+    gap: 1rem;
+    padding: 0.2rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+  }
+  
+  .calender-area {
+    flex: 1;
+  }
+  
+  .time-slot-area {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-content: flex-start;
+  }
+  
+  .location-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+
+  
+  .alert {
+    width:50%;
+    margin-top: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .date-selection {
+      flex-direction: column;
+      justify-content: center;
+      max-height: 400px;
+    }
+
+    .alert{
+        width:90%;
+    }
+  }
+  
