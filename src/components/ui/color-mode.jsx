@@ -4,11 +4,26 @@ import { ClientOnly, IconButton, Skeleton, Span } from '@chakra-ui/react'
 import { ThemeProvider, useTheme } from 'next-themes'
 
 import * as React from 'react'
+import { useEffect } from 'react'
 import { LuMoon, LuSun } from 'react-icons/lu'
+
+
+function AutoLightModeSetter() {
+  const { setTheme } = useTheme()
+
+  useEffect(() => {
+    setTheme('light')
+  }, [setTheme])
+
+  return null
+}
 
 export function ColorModeProvider(props) {
   return (
-    <ThemeProvider attribute='class' disableTransitionOnChange {...props} />
+    <ThemeProvider attribute='class' disableTransitionOnChange {...props}>
+      <AutoLightModeSetter />
+      {props.children}
+    </ThemeProvider>
   )
 }
 

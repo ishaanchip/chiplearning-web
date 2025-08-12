@@ -21,8 +21,10 @@
 }
 
 .mini-filter-area{
-    width:80%;
-    height:300px;
+    width:100%;
+    min-height:300px;
+    height:90%;
+    overflow-y: scroll;
 }
 
 .mini-filter-button{
@@ -81,7 +83,7 @@
 .tutor{
     min-width: 250px;
     width:250px;
-    height:95%;
+    height:85%;
     overflow-y: scroll;
     background-color: rgba(241, 227, 209, 0.6);
     border-radius: 15px;

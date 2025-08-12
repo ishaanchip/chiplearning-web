@@ -61,11 +61,13 @@ const Home = () => {
                     </Button>
                 ))}
             </Container>
-            <div className="bottom-navigation">
-                <Link to="/booking" className="bottom-option"><Icon as={BiPurchaseTag} boxSize={6} style={{color:'black', background:'none'}}/><p>Book Tutors</p></Link>
-                <Link to="/sessions" className="bottom-option"> <Icon as={FaEye} boxSize={6} style={{color:'black', background:'none'}}/><p>View Sessions</p></Link>
-                <Link to="/tutor-view" className="bottom-option"><Icon as={CiApple} boxSize={6} style={{color:'black', background:'none'}}/><p>Tutor Dashboard</p></Link>
-            </div>
+            <SignedIn>
+                <div className="bottom-navigation">
+                    <Link to="/booking" className="bottom-option"><Icon as={BiPurchaseTag} boxSize={6} style={{color:'black', background:'none'}}/><p>Book Tutors</p></Link>
+                    <Link to="/sessions" className="bottom-option"> <Icon as={FaEye} boxSize={6} style={{color:'black', background:'none'}}/><p>View Sessions</p></Link>
+                    <Link to="/tutor-view" className="bottom-option"><Icon as={CiApple} boxSize={6} style={{color:'black', background:'none'}}/><p>Tutor Dashboard</p></Link>
+                </div>
+            </SignedIn>
         </Container>
         <div className="stats">
             <div className="stat">

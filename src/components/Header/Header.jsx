@@ -15,7 +15,7 @@ import { dateToTimeConverter, fetchAccount, updateTutorAccount } from '../genera
 
 
 //external dependenices
-import { SignedIn, SignedOut, SignInButton, SignUpButton, SignOutButton, useUser as clerkUseUser, useClerk } from "@clerk/clerk-react";
+import { SignUp, SignedIn, SignedOut, SignInButton, SignUpButton, SignOutButton, useUser as clerkUseUser, useClerk } from "@clerk/clerk-react";
 import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { Icon, Button, Text, Popover, Portal } from '@chakra-ui/react';
@@ -27,11 +27,11 @@ import { Icon, Button, Text, Popover, Portal } from '@chakra-ui/react';
 const Header = ({localToken=null}) => {
 
   //1.sign out assuring clearing of local storage  
-  const {signOut} = useClerk()  
-  const handleSignOut = async () =>{
-    await signOut()
-    localStorage.clear()
-  }
+    const {signOut} = useClerk()  
+    const handleSignOut = async () =>{
+      await signOut()
+      localStorage.clear()
+    }
   
   //2. email viewer functionality
     //var to display mail or not 
@@ -73,6 +73,7 @@ const Header = ({localToken=null}) => {
       //var to display profile nav or not 
       const [viewProfile, setViewProfile] = useState(false)
 
+
   return (
     <div className='header-shell'>
         <div className='header-title'>
@@ -80,9 +81,22 @@ const Header = ({localToken=null}) => {
             {/* <button onClick={updateTutorAccount}>INJECT</button> */}
         </div>
         <div className='header-nav-options'>
-            <Link to="/booking"><p>Book Tutors</p></Link>
-            <Link to="/sessions"><p>View Sessions</p></Link>
-            <Link to="/tutor-view"><p>Tutor Dashboard</p></Link>
+            <SignedIn>
+              <Link to="/booking"><p>Book Tutors</p></Link>
+              <Link to="/sessions"><p>View Sessions</p></Link>
+              <Link to="/tutor-view"><p>Tutor Dashboard</p></Link>
+            </SignedIn>
+            <SignedOut>
+              <SignInButton mode="modal" >
+                <p style={{ cursor: 'pointer' }}>Book Tutors</p>
+              </SignInButton>
+              <SignInButton mode="modal" >
+                <p style={{ cursor: 'pointer' }}>View Sessions</p>
+              </SignInButton>
+              <SignInButton mode="modal" >
+                <p style={{ cursor: 'pointer' }}>Tutor Dashboard</p>
+              </SignInButton>
+            </SignedOut>
             <SignedOut>
                 <SignInButton mode="modal" className='log-in'></SignInButton>
                 <SignUpButton  mode="modal" className='sign-up'></SignUpButton>
