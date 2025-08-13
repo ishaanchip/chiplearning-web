@@ -58,6 +58,11 @@
     height:0.9rem;
 }
 
+.dialog-header{
+    margin-top: 10%;
+}
+
+
 .tutors{
     display: flex;
     flex-wrap: wrap;

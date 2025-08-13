@@ -92,9 +92,9 @@ const TutorCatalog = ({classSelection, daySelection, setClassSelection, setDaySe
                         <Dialog.Positioner>
                         <Dialog.Content>
                             <Dialog.Header>
-                            <Dialog.CloseTrigger asChild>
-                                <CloseButton size="sm" />
-                            </Dialog.CloseTrigger>
+                                <Dialog.CloseTrigger asChild mt="10%">
+                                        <CloseButton size="sm" />
+                                    </Dialog.CloseTrigger>
                             </Dialog.Header>
                             <Dialog.Body>
                                 <Filter classSelection={classSelection} setClassSelection={setClassSelection} daySelection={daySelection} setDaySelection={setDaySelection} isMini={true}/>

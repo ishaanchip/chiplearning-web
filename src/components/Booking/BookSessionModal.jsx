@@ -148,7 +148,7 @@ const BookSessionModal = ({tutor, setCurrentModal}) => {
           <Dialog.Content>
             <Dialog.Header className='dialog-header'>
               <Dialog.CloseTrigger asChild onClick={() => handleResetModal()}>
-                <CloseButton size="md" />
+                <CloseButton size="md"/>
               </Dialog.CloseTrigger>
             </Dialog.Header>
             <Dialog.Body className='book-session-area'>
