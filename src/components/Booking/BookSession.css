@@ -50,12 +50,12 @@
 .book-session-area {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    /* gap: 2rem; */
     padding: 1rem;
     width: 100%;
     overflow-y: scroll;
     background-color: #f9fafb; /* light neutral background */
-    border-radius: 8px;
+    /* border-radius: 8px; */
   }
   
   .booking-process {

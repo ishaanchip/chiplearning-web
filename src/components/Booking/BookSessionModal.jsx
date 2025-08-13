@@ -144,9 +144,9 @@ const BookSessionModal = ({tutor, setCurrentModal}) => {
       </Dialog.Trigger>
       <Portal>
         <Dialog.Backdrop />
-        <Dialog.Positioner>
-          <Dialog.Content>
-            <Dialog.Header className='dialog-header'>
+        <Dialog.Positioner >
+          <Dialog.Content bg="#f9fafb">
+            <Dialog.Header className='dialog-header' >
               <Dialog.CloseTrigger asChild onClick={() => handleResetModal()}>
                 <CloseButton size="md"/>
               </Dialog.CloseTrigger>
