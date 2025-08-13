@@ -131,38 +131,51 @@ import axios from 'axios'
         try{
 
             let postBody = {
-                first_name: "Diana",
-                last_name: "Lopez",
-                email: "dlopez@example.com",
-                reviews: [5, 5, 5],
+                first_name: "John",
+                last_name: "Chip",
+                email: "ishaanchip@gmail.com",
+                reviews: [],
                 tutor_info: {
-                  school: "Lincoln Preparatory School",
-                  grade: 12,
-                  display_picture: "diana_lopez.png"
+                  school: "Independence High School",
+                  grade: 11,
+                  display_picture: "https://res.cloudinary.com/dsrfbwrcb/image/upload/v1755126892/4_fxlfgo.png"
                 },
-                fields: ["AP Microeconomics"],
-                history: [
-                  {
-                    client_email: "client5@example.com",
-                    meeting_status: "completed",
-                    session_details: {
-                      date: "2025-06-30",
-                      timing: "17:00",
-                      topic: "AP Microeconomics",
-                      resources: ["microeconomics_summary.pdf", "mircotutor.com"]
+                fields: ["SAT Math", "AP Calculus AB"],
+                current_sessions:[],
+                past_sessions:[],
+                locations:["Brambelton Library"],
+                updated_availability: {
+                    monday: {
+                      available: false,
+                      slots: []
                     },
-                    session_id: "1699961000000-dlopezclient5"
-                  }
-                ],
-                availability: {
-                  monday: { available: true, slots: ["evening"] },
-                  tuesday: { available: true, slots: ["morning", "afternoon"] },
-                  wednesday: { available: false, slots: [] },
-                  thursday: { available: true, slots: ["afternoon"] },
-                  friday: { available: true, slots: ["morning", "afternoon"] },
-                  saturday: { available: false, slots: [] },
-                  sunday: { available: true, slots: ["morning", "evening"] }
-                }
+                    tuesday: {
+                        available: false,
+                        slots: []
+                    },
+                    wednesday: {
+                        available: false,
+                        slots: []
+                    },
+                    thursday: {
+                        available: false,
+                        slots: []
+                    },
+                    friday: {
+                        available: false,
+                        slots: []
+                    },
+                    saturday: {
+                        available: false,
+                        slots: []
+                    },
+                    sunday: {
+                      available: true,
+                      slots: [
+                        "10:00 A.M", "11:00 P.M", "12:00 P.M", "1:00 P.M", "2:00 P.M", "3:00 P.M"
+                      ]
+                    }
+                  }    
               };
               
               

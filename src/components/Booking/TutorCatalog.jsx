@@ -126,8 +126,6 @@ const TutorCatalog = ({classSelection, daySelection, setClassSelection, setDaySe
                         <div className="tutor-display-info">
                             <img src={tutor.tutor_info?.display_picture} alt={`${tutor.first_name}-${tutor.last_name}-img`}/>
                             <Button onClick={() => setCurrentModal(i)}>Book Tutor</Button>
-                            <div className="email-tag"><Icon as={TbMail} boxSize={4} style={{color:'black', background:'none'}}/><p>{tutor.email}</p></div>
-
                         </div>
                         <div className="tutor-essential-info">
                             <div className='tutor-offerings'>

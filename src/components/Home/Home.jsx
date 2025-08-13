@@ -70,7 +70,7 @@ const Home = () => {
                 ))}
             </Container>
         </Container>
-        <div className="stats">
+        {/* <div className="stats">
             <div className="stat">
                 <h1>100+ hr</h1>
                 <p>combined tutoring experience</p>
@@ -83,7 +83,7 @@ const Home = () => {
                 <h1>20</h1>
                 <p>detailed content articles</p>
             </div>
-        </div>
+        </div> */}
 
 
 

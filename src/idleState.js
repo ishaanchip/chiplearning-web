@@ -9,10 +9,8 @@ export const useIdleLogout = () => {
     const autoLogoutTime = 1000*60
 
     const resetTimer = () =>{
-        console.log('reset')
         clearTimeout(idleTimer.current) // always clear old timer
         idleTimer.current = setTimeout(() => {
-          console.log('Logging out...')
           signOut()
         }, autoLogoutTime)
 

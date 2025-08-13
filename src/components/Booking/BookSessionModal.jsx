@@ -5,7 +5,7 @@ import "./BookSession.css"
 
 
 //intercomponent imports
-import { numToDayConversions, dayToDayConversions, timePeriodConversions, createSession } from './bookingHelper';
+import { numToDayConversions, dayToDayConversions, timePeriodConversions, createSession, LIMITED_LOCATIONS_LIST, LIMITED_LOCATIONS_TIMINGS } from './bookingHelper';
 import { fetchSessions } from '../general/helper';
 
 
@@ -24,6 +24,7 @@ const BookSessionModal = ({tutor, setCurrentModal}) => {
     const [tutorCurrentSessions, setTutorCurrentSessions] = useState([])
     const [timingTutorCurrentSessions, setTimingTutorCurrentSessions] = useState([])
 
+    
     useEffect(() =>{
       setUpdatedTutorAvailability(tutor.updated_availability)
       setTutorCurrentSessions(tutor.current_sessions)
@@ -38,8 +39,11 @@ const BookSessionModal = ({tutor, setCurrentModal}) => {
 
     useEffect(() =>{
       if (sessionData && tutorCurrentSessions){
-        console.log(sessionData)
-        const formattedSet = sessionData.map((session) =>`${session.session_details.date}|${session.session_details.timing}`)
+        let formattedSet = sessionData.map((session) =>`${session.session_details.date}|${session.session_details.timing}`)
+        if (tutorCurrentSessions.length == 0){
+          formattedSet = []
+        }
+        console.log(formattedSet)
         setTimingTutorCurrentSessions(formattedSet)
       }
     }, [sessionData, tutorCurrentSessions])
@@ -77,6 +81,7 @@ const BookSessionModal = ({tutor, setCurrentModal}) => {
     const [selectedDayObject, setSelectedDayObject] = useState(null);
     const [currentDay, setCurrentDay] = useState(null)
     const [rawCurrentDay, setRawCurrentDay] = useState(null)
+    const [currentSelectedDayOfWeek, setCurrentSelectedDayOfWeek] = useState(null)
 
 
     const [updatedViableTimes, setUpdatedViableTimes] = useState([])
@@ -89,6 +94,7 @@ const BookSessionModal = ({tutor, setCurrentModal}) => {
       let selectedFullDayInfo = value['$d']
       let selectedDayToObject = new Date(selectedFullDayInfo)
       let selectedDayOfWeek = selectedDayToObject.getDay()
+      setCurrentSelectedDayOfWeek(numToDayConversions[selectedDayOfWeek])
       setUpdatedViableTimes(updatedTutorAvailability[numToDayConversions[selectedDayOfWeek]].slots)
       setCurrentTime(null)
     }
@@ -229,14 +235,47 @@ const BookSessionModal = ({tutor, setCurrentModal}) => {
 
                     </div>
                   </div>
-                  <div className="location-selection">
-                    <h1>Pick the Spot</h1>
-                    <div className='location-options'>
-                    {tutor.locations.map((location, i) =>(
-                      <Button key={`tutor-location-${i}`} onClick={() => setCurrentLocation(location)} className='booking-button' style={location == currentLocation ? {'backgroundColor':'green', 'color':'white'}: {'color':'black'}}>{location}</Button>
-                    ))}
+                  {
+                    currentTime === null 
+                    ?
+                    <div className="location-selection">
+                      <h1>Pick the Spot [select timing  first!]</h1>
+                      <div className='location-options'>
+                      {tutor.locations.map((location, i) =>(
+                        <Button key={`tutor-location-${i}`} onClick={() => setCurrentLocation(location)} className='booking-button' style={location == currentLocation ? {'backgroundColor':'green', 'color':'white'}: {'color':'black'}} disabled={true}>{location}</Button>
+                      ))}
+                      </div>
                     </div>
-                  </div>
+                    :
+                    <div className="location-selection">
+                      <h1>Pick the Spot</h1>
+                      <div className='location-options'>
+                      {tutor.locations.map((location, i) =>{
+                        let disableLocation = false
+                        if (LIMITED_LOCATIONS_LIST.includes(location)){
+                          console.log(location)
+                          console.log(currentDay)
+                          console.log(currentTime)
+                          console.log(currentSelectedDayOfWeek)
+                          console.log(LIMITED_LOCATIONS_TIMINGS[location][currentSelectedDayOfWeek])
+                          if (!LIMITED_LOCATIONS_TIMINGS[location][currentSelectedDayOfWeek].includes(currentTime)){
+                            disableLocation = true;
+                          }
+                        }
+                        return (
+                          <Button key={`tutor-location-${i}`} onClick={() => setCurrentLocation(location)} className='booking-button' style={location == currentLocation ? {'backgroundColor':'green', 'color':'white'}: {'color':'black'}} disabled={disableLocation}>
+                            {location} {disableLocation && '(closed)'}
+                          </Button>
+                          
+                        )
+                      })}
+                      </div>
+                    </div>
+
+                    
+
+                  }
+
                   {
                     showAlert &&
                     <Alert.Root status="error" className='alert'>

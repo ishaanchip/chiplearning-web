@@ -2,6 +2,53 @@ import axios from 'axios'
 
 
 //FUNCTIONALITY: 
+    //list and respective info of locations with specific close timings for tutors
+    export const LIMITED_LOCATIONS_LIST = ["Brambleton Library"]
+    export const LIMITED_LOCATIONS_TIMINGS = {
+        "Brambleton Library":{
+            "monday": [
+                "10:00 A.M", "11:00 A.M", "12:00 P.M",
+                "1:00 P.M", "2:00 P.M", "3:00 P.M",
+                "4:00 P.M", "5:00 P.M", "6:00 P.M",
+                "7:00 P.M", "8:00 P.M"
+              ],
+              "tuesday": [
+                "10:00 A.M", "11:00 A.M", "12:00 P.M",
+                "1:00 P.M", "2:00 P.M", "3:00 P.M",
+                "4:00 P.M", "5:00 P.M", "6:00 P.M",
+                "7:00 P.M", "8:00 P.M"
+              ],
+              "wednesday": [
+                "10:00 A.M", "11:00 A.M", "12:00 P.M",
+                "1:00 P.M", "2:00 P.M", "3:00 P.M",
+                "4:00 P.M", "5:00 P.M", "6:00 P.M",
+                "7:00 P.M", "8:00 P.M"
+              ],
+              "thursday": [
+                "10:00 A.M", "11:00 A.M", "12:00 P.M",
+                "1:00 P.M", "2:00 P.M", "3:00 P.M",
+                "4:00 P.M", "5:00 P.M", "6:00 P.M",
+                "7:00 P.M", "8:00 P.M"
+              ],
+              "friday": [
+                "10:00 A.M", "11:00 A.M", "12:00 P.M",
+                "1:00 P.M", "2:00 P.M", "3:00 P.M",
+                "4:00 P.M", "5:00 P.M", "6:00 P.M",
+                "7:00 P.M", "8:00 P.M"
+              ],
+              "saturday": [
+                "10:00 A.M", "11:00 A.M", "12:00 P.M",
+                "1:00 P.M", "2:00 P.M", "3:00 P.M",
+                "4:00 P.M"
+              ],
+              "sunday": [
+                "12:00 P.M", "1:00 P.M", "2:00 P.M",
+                "3:00 P.M", "4:00 P.M"
+              ]
+            }
+        }
+    
+
     //list of days & day conversions
     export const DAYS = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     export const numToDayConversions = {
@@ -78,7 +125,7 @@ import axios from 'axios'
                 let localDays = DAYS.map((day) => day.toLowerCase())
                 let tutorDays = []
                 for (let i = 0; i < localDays.length; i++){
-                    if (tutor.availability[localDays[i]].available == true){
+                    if (tutor.updated_availability[localDays[i]].available == true){
                         tutorDays.push(localDays[i])
                     }
                 }

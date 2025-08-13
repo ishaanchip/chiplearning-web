@@ -11,7 +11,7 @@ import { BiPurchaseTag } from 'react-icons/bi';
 
 //intercomponent imports
 import { checkMail } from './headerHelper';
-import { dateToTimeConverter, fetchAccount, updateTutorAccount } from '../general/helper';
+import { createTutorAccount, dateToTimeConverter, fetchAccount, updateTutorAccount } from '../general/helper';
 
 
 //external dependenices
@@ -78,7 +78,6 @@ const Header = ({localToken=null}) => {
     <div className='header-shell'>
         <div className='header-title'>
             <Link to="/"><h1>ChipLearning</h1></Link>
-            {/* <button onClick={updateTutorAccount}>INJECT</button> */}
         </div>
         <div className='header-nav-options'>
             <SignedIn>
