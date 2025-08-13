@@ -92,7 +92,7 @@ const TutorCatalog = ({classSelection, daySelection, setClassSelection, setDaySe
                         <Dialog.Positioner>
                         <Dialog.Content>
                             <Dialog.Header>
-                                <Dialog.CloseTrigger asChild mt="10%">
+                                <Dialog.CloseTrigger asChild mt="12.5%">
                                         <CloseButton size="sm" />
                                     </Dialog.CloseTrigger>
                             </Dialog.Header>
