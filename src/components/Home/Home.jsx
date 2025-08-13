@@ -46,7 +46,15 @@ const Home = () => {
   return (
     <div className='home-shell'>
         <Header localToken={localToken}/>
+
         <Container className="main-description">
+        <SignedIn>
+                <div className="page-navigation">
+                    <Link to="/booking" className="page-option"><Icon as={BiPurchaseTag} boxSize={6} style={{color:'black', background:'none'}}/><p>Book Tutors</p></Link>
+                    <Link to="/sessions" className="page-option"> <Icon as={FaEye} boxSize={6} style={{color:'black', background:'none'}}/><p>View Sessions</p></Link>
+                    <Link to="/tutor-view" className="page-option"><Icon as={CiApple} boxSize={6} style={{color:'black', background:'none'}}/><p>Tutor Dashboard</p></Link>
+                </div>
+        </SignedIn>
             <h1>Tutoring Reimagined</h1>
             <p>Personalized tutoring free of charge - Powered by students who have taken the class.</p>
             <SignedOut>
@@ -61,13 +69,6 @@ const Home = () => {
                     </Button>
                 ))}
             </Container>
-            <SignedIn>
-                <div className="bottom-navigation">
-                    <Link to="/booking" className="bottom-option"><Icon as={BiPurchaseTag} boxSize={6} style={{color:'black', background:'none'}}/><p>Book Tutors</p></Link>
-                    <Link to="/sessions" className="bottom-option"> <Icon as={FaEye} boxSize={6} style={{color:'black', background:'none'}}/><p>View Sessions</p></Link>
-                    <Link to="/tutor-view" className="bottom-option"><Icon as={CiApple} boxSize={6} style={{color:'black', background:'none'}}/><p>Tutor Dashboard</p></Link>
-                </div>
-            </SignedIn>
         </Container>
         <div className="stats">
             <div className="stat">

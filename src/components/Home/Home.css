@@ -67,18 +67,18 @@
     text-align: left;
 }
 
-.bottom-navigation{
+.page-navigation{
     display: none;
     width:100%;
     justify-content: space-between;
-    margin-top: 5%;
+    margin-bottom: 15%;
 }
 
-.bottom-option{
+.page-option{
     width: 100%;
 }
 
-.bottom-option p{
+.page-option p{
     font-size: 0.75rem;
 }
 
@@ -112,7 +112,7 @@
         font-size: 1rem;
     }
 
-    .bottom-navigation{
+    .page-navigation{
         display: flex;
     }
 

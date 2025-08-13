@@ -81,7 +81,7 @@ const TutorCatalog = ({classSelection, daySelection, setClassSelection, setDaySe
                         </Menu.Positioner>
                     </Portal>
                 </Menu.Root>
-                <Dialog.Root size="cover" placement="center" motionPreset="slide-in-bottom">
+                <Dialog.Root size="full" placement="center" motionPreset="slide-in-bottom">
                     <Dialog.Trigger asChild>
                         <Button variant="outline" size="sm" className='mini-filter-button'>
                         Filter
