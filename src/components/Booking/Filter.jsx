@@ -28,10 +28,10 @@ const Filter = ({classSelection, daySelection, setClassSelection, setDaySelectio
                     <Fieldset.Content>
                         <For each={COURSE_OFFERINGS}>
                             {(course) => (
-                            <Checkbox.Root key={course} value={course}>
+                            <Checkbox.Root key={course} value={course} h="15px">
                                 <Checkbox.HiddenInput />
-                                <Checkbox.Control />
-                                <Checkbox.Label ml="1">{course}</Checkbox.Label>
+                                <Checkbox.Control className="checkbox-box"/>
+                                <Checkbox.Label ml="1" className="checkbox-label">{course}</Checkbox.Label>
                             </Checkbox.Root>
                             )}
                         </For>
@@ -49,10 +49,10 @@ const Filter = ({classSelection, daySelection, setClassSelection, setDaySelectio
                     <Fieldset.Content>
                     <For each={DAYS}>
                         {(day) => (
-                        <Checkbox.Root key={day} value={day}>
+                        <Checkbox.Root key={day} value={day} h="15px">
                             <Checkbox.HiddenInput />
-                            <Checkbox.Control />
-                            <Checkbox.Label ml="1">{day}</Checkbox.Label>
+                            <Checkbox.Control className="checkbox-box"/>
+                            <Checkbox.Label ml="1" className="checkbox-label">{day}</Checkbox.Label>
                         </Checkbox.Root>
                         )}
                     </For>

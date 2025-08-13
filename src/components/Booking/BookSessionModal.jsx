@@ -180,8 +180,8 @@ const BookSessionModal = ({tutor, setCurrentModal}) => {
                             transformOrigin: "top left",
                             // align weekday headers with shrunken cells
                             "& .MuiDayCalendar-weekDayLabel": {
-                              fontSize: "0.65rem", // shrink M, T, W...
-                              minWidth: "28px", // match smaller cells
+                              fontSize: "0.5rem", // shrink M, T, W...
+                              width: "28px", // match smaller cells
                             },
                             "& .MuiPickersDay-root": {
                               fontSize: "0.75rem", // shrink numbers

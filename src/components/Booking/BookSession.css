@@ -121,9 +121,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    max-height: 300px;
     gap: 1rem;
-    padding: 0.2rem;
+    padding: 0.5rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: white;
@@ -158,7 +157,6 @@
     .date-selection {
       flex-direction: column;
       justify-content: center;
-      max-height: 400px;
     }
 
     .alert{

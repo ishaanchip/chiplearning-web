@@ -22,9 +22,7 @@
 
 .mini-filter-area{
     width:100%;
-    min-height:300px;
-    height:90%;
-    overflow-y: scroll;
+    overflow-y: visible;
 }
 
 .mini-filter-button{
@@ -50,27 +48,15 @@
 }
 
 
-.filter-selections{
-    display: flex;
-    flex-wrap: wrap;
-    width:90%;
-    height:20%;
-    overflow-y: scroll;
-    margin-left: -1%;
+
+
+.checkbox-label{
+    font-size:0.65rem;
 }
 
-.filter-selections div{
-    margin: 1%;
-}
-
-.filter-selections p{
-    min-width:150px;
-    height:35px;
-    padding:2%;
-    font-size: 13px;
-    border: 2px solid gray;
-    border-radius: 15px;
-    text-align: center;
+.checkbox-box{
+    width:0.9rem;
+    height:0.9rem;
 }
 
 .tutors{

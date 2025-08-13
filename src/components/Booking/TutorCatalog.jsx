@@ -107,14 +107,6 @@ const TutorCatalog = ({classSelection, daySelection, setClassSelection, setDaySe
 
         </div>  
 
-        {/* <div className="filter-selections">
-            {classSelection.map((course) =>(
-                <div key={course}><p>{course}</p></div>
-            ))}
-            {daySelection.map((day) =>(
-                <div key={day}><p>{day}</p></div>
-            ))}
-        </div> */}
 
         {fetchedTutors  === false 
             ?
