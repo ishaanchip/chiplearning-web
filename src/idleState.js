@@ -6,7 +6,7 @@ export const useIdleLogout = () => {
     //0. base variables
     const {signOut} = useClerk()
     const idleTimer = useRef(null)
-    const autoLogoutTime = 1000*60*10
+    const autoLogoutTime = 1000*60
 
     const resetTimer = () =>{
         console.log('reset')
