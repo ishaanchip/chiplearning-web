@@ -53,16 +53,19 @@ const BookSessionModal = ({tutor, setCurrentModal}) => {
 
     const shouldDisableDate = (date) => {
       const today = new Date();
+      const tomorrow = new Date(today);
+      tomorrow.setDate(today.getDate() + 1);
       const todayDate = today.getDate();
+      
       const todayDayOfWeek = today.getDay(); // 0 = Sunday, 6 = Saturday
-      const daysUntilSunday = 14 - todayDayOfWeek
+      const daysUntilSunday = 10 - todayDayOfWeek
       // const daysUntilSunday = 7 - todayDayOfWeek;
       const endDate = new Date(today);
       endDate.setDate(todayDate + daysUntilSunday); // Subtract 1 because today counts
 
       const jsDate = date.toDate();
       // 1.disable dates before today
-      if (jsDate < today) return true;
+      if (jsDate < tomorrow) return true;
       // 2.disable dates after  sunday
       if (jsDate > endDate) return true;
       const day = date.day()
