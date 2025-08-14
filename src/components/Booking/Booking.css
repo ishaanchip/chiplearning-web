@@ -156,11 +156,12 @@
 
     }
     .tutors{
-        height:95%;
+        height:75%;
     }
     .tutor{
         width:90%;
         height:60%;
+        min-height: 350px;
     }
 
     .filter-area{
