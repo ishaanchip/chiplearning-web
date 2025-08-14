@@ -38,7 +38,6 @@
 .session-booked-area{
     max-width: 700px;
     width:95%;
-    height:60%;
     max-height: 500px;
     padding: 2%;
     overflow-y: scroll;
@@ -137,6 +136,12 @@
     p{
         font-size: 0.7rem;
     }
+    .session-booked-area{
+        max-height: 235px;
+    
+    }
+
+
 
 }
 
