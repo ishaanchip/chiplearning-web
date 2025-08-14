@@ -72,6 +72,7 @@
     flex-wrap: wrap;
     height:80%;
     overflow-y: scroll;
+    margin-bottom: 5%;
 }
 
 .tutor{
@@ -148,7 +149,6 @@
 
 
 @media  only screen and (max-width:800px){
-
     .tutor-catalog-area{
         margin-left: 5%;
         width:90%;
@@ -157,7 +157,6 @@
     }
     .tutors{
         height:95%;
-        overflow-y: visible;
     }
     .tutor{
         width:90%;
