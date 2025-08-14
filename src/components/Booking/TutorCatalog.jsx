@@ -29,14 +29,14 @@ const TutorCatalog = ({classSelection, daySelection, setClassSelection, setDaySe
         if (allTutors){
             //console.log(allTutors)
             let localCatalog = filterTutorCatalog(allTutors, classSelection, daySelection)
-            localCatalog = sortTutorCatalog(localCatalog, "Alphabet")
+            localCatalog = sortTutorCatalog(localCatalog, "Default")
             setTutorDisplay(localCatalog)
             // setTutorDisplay(sortTutorCatalog(allTutors, "Alphabet"))
         }
     }, [allTutors])
 
     //1. sorting condition
-        const [sortCondition , setSortCondition] = useState("Alphabet")
+        const [sortCondition , setSortCondition] = useState("Default")
         useEffect(() =>{
             if (fetchedTutors == true ){
                 setTutorDisplay(sortTutorCatalog(tutorDisplay, sortCondition))
@@ -74,9 +74,9 @@ const TutorCatalog = ({classSelection, daySelection, setClassSelection, setDaySe
                     <Portal>
                         <Menu.Positioner>
                         <Menu.Content>
-                            <Menu.Item onClick={() => setSortCondition('Alphabet')} value="alphabet">Alphabet</Menu.Item>
+                            <Menu.Item onClick={() => setSortCondition('Default')} value="default">Default</Menu.Item>
                             <Menu.Item onClick={() => setSortCondition('Grade Level')} value="grade-level">Grade level</Menu.Item>
-                            <Menu.Item onClick={() => setSortCondition('Stars')} value="stars">Stars</Menu.Item>
+                            <Menu.Item onClick={() => setSortCondition('Alphabet')} value="alphabet">Alphabet</Menu.Item>
                         </Menu.Content>
                         </Menu.Positioner>
                     </Portal>

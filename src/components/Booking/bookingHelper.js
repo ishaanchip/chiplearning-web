@@ -90,14 +90,15 @@ import axios from 'axios'
         }
 
 
-        if (sortFeature == "Alphabet"){
-            return [...tutors].sort((a, b) =>  a.last_name.localeCompare(b.last_name))
+        if (sortFeature == "Default"){
+            //tutors w most fields
+            return [...tutors].sort((a, b) => (b.fields.length - a.fields.length))
         }
         else if (sortFeature == "Grade Level"){
             return [...tutors].sort((a, b) => b.tutor_info.grade - a.tutor_info.grade)
         }
-        else if (sortFeature  == "Stars"){
-            return [...tutors].sort((a, b) => sumArr(b.reviews) - sumArr(a.reviews))
+        else if (sortFeature  == "Alphabet"){
+            return [...tutors].sort((a, b) =>  a.last_name.localeCompare(b.last_name))
         }
 
     }
