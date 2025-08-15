@@ -117,7 +117,7 @@
     background-color: rgb(178, 119, 9);
     color: white;
 }
-.session-approved{
+.session-approved, .session-completed{
     background-color: rgb(9, 178, 79);
     color: white;
 }
