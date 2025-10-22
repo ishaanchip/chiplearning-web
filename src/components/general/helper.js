@@ -1,6 +1,7 @@
 //icon imports
 import { RiPencilLine } from "react-icons/ri";        
 import { TbPigMoney, TbMathIntegralX, TbMathFunction } from "react-icons/tb"; 
+import { GiMaterialsScience } from "react-icons/gi";
 import { BsCoin } from "react-icons/bs";    
 import { PiSigmaThin } from "react-icons/pi";           
 import { LiaLaptopCodeSolid } from "react-icons/lia";  
@@ -32,6 +33,10 @@ import axios from 'axios'
         "AP Microeconomics": {
         icon: BsCoin,
         color: "green.600",
+        },
+        "Physics": {
+            icon:GiMaterialsScience,
+            color:"blue.600"
         },
         "SAT English": {
         icon: RiPencilLine,
@@ -131,49 +136,47 @@ import axios from 'axios'
         try{
 
             let postBody = {
-                first_name: "John",
-                last_name: "Chip",
-                email: "ishaanchip@gmail.com",
+                first_name: "Abhinav",
+                last_name: "Koneru",
+                email: "abhinav.koneru08@gmail.com",
                 reviews: [],
                 tutor_info: {
                   school: "Independence High School",
-                  grade: 11,
-                  display_picture: "https://res.cloudinary.com/dsrfbwrcb/image/upload/v1755126892/4_fxlfgo.png"
+                  grade: 12,
+                  display_picture: "https://res.cloudinary.com/dsrfbwrcb/image/upload/v1755829570/Chip_Learning_Logo_-_Prelim_6_hqm0xf.png"
                 },
-                fields: ["SAT Math", "AP Calculus AB"],
+                fields: ["AP Macroeconomics","AP Microeconomics", "AP Calculus AB", "SAT Math"],
                 current_sessions:[],
                 past_sessions:[],
-                locations:["Brambelton Library"],
+                locations:["Brambleton Library", "Google Meet"],
                 updated_availability: {
                     monday: {
-                      available: false,
-                      slots: []
+                      available: true,
+                      slots: ["7:00 P.M", "8:00 P.M", "9:00 P.M"]
                     },
                     tuesday: {
-                        available: false,
-                        slots: []
+                        available: true,
+                        slots: ["7:00 P.M", "8:00 P.M", "9:00 P.M"]
                     },
                     wednesday: {
-                        available: false,
-                        slots: []
+                        available: true,
+                        slots: ["7:00 P.M", "8:00 P.M", "9:00 P.M"]
                     },
                     thursday: {
-                        available: false,
-                        slots: []
+                        available: true,
+                        slots: ["7:00 P.M", "8:00 P.M", "9:00 P.M"]
                     },
                     friday: {
-                        available: false,
-                        slots: []
+                        available: true,
+                        slots: ["7:00 P.M", "8:00 P.M", "9:00 P.M"]
                     },
                     saturday: {
-                        available: false,
-                        slots: []
+                        available: true,
+                        slots: ["12:00 P.M", "1:00 P.M", "2:00 P.M", "3:00 P.M", "7:00 P.M", "8:00 P.M", "9:00 P.M"]
                     },
                     sunday: {
-                      available: true,
-                      slots: [
-                        "10:00 A.M", "11:00 P.M", "12:00 P.M", "1:00 P.M", "2:00 P.M", "3:00 P.M"
-                      ]
+                        available: true,
+                        slots: ["12:00 P.M", "1:00 P.M", "2:00 P.M", "3:00 P.M", "7:00 P.M", "8:00 P.M", "9:00 P.M"]
                     }
                   }    
               };
